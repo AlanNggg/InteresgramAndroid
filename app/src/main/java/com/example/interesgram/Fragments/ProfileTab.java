@@ -11,14 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.interesgram.Adapters.ProfilePagerAdapter;
+import com.example.interesgram.Adapters.ProfileFragmentPagerAdapter;
 import com.example.interesgram.EditProfileActivity;
 import com.example.interesgram.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class ProfileTab extends Fragment {
 
-    private ProfilePagerAdapter profilePagerAdapter;
+    private ProfileFragmentPagerAdapter profileFragmentPagerAdapter;
     private ViewPager profilePager;
     private TabLayout profileTabLayout;
     private Button btnEditProfile;
@@ -38,11 +38,11 @@ public class ProfileTab extends Fragment {
 
         btnEditProfile.setOnClickListener(switchEditProfileOnClick);
 
-        profilePagerAdapter = new ProfilePagerAdapter(getChildFragmentManager());
-        profilePagerAdapter.addItem(new GalleryTab(), "Gallery");
-        profilePagerAdapter.addItem(new FavoriteTab(), "Favorite");
-        profilePagerAdapter.addItem(new TagTab(), "@ You");
-        profilePager.setAdapter(profilePagerAdapter);
+        profileFragmentPagerAdapter = new ProfileFragmentPagerAdapter(getChildFragmentManager());
+        profileFragmentPagerAdapter.addItem(new GalleryTab(), "Gallery");
+        profileFragmentPagerAdapter.addItem(new FavoriteTab(), "Favorite");
+        profileFragmentPagerAdapter.addItem(new TagTab(), "@ You");
+        profilePager.setAdapter(profileFragmentPagerAdapter);
 
         profileTabLayout.setupWithViewPager(profilePager, false);
         // Inflate the layout for this fragment

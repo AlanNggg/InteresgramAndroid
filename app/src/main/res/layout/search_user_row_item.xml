@@ -32,7 +32,7 @@
             android:id="@+id/search_row_item_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="name"
+            android:text="Hello World"
             android:maxLength="20"
             android:maxLines="1"
             android:layout_marginBottom="8dp"/>

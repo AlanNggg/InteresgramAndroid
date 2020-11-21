@@ -9,11 +9,12 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfilePagerAdapter extends FragmentPagerAdapter {
+public class ProfileFragmentPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragments = new ArrayList<>();
     private List<String> titles = new ArrayList<>();
 
-    public ProfilePagerAdapter(@NonNull FragmentManager fm) {
+
+    public ProfileFragmentPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 

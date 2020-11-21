@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/post_card"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardForegroundColor="@android:color/transparent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,26 +18,34 @@
             android:orientation="horizontal"
             android:padding="8dp">
 
-            <ImageView
-                android:id="@+id/home_avatar"
+            <androidx.cardview.widget.CardView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="8dp"
-                app:srcCompat="@android:drawable/sym_def_app_icon" />
+                app:cardCornerRadius="25dp">
+
+                <ImageView
+                    android:id="@+id/home_row_item_avatar"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@android:drawable/sym_def_app_icon" />
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
+                android:id="@+id/home_row_item_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:text="Hello World" />
+                android:text="Hello World"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/post_images"
-            android:scaleType="centerCrop"
+            android:id="@+id/home_row_item_post_images"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@android:drawable/sym_def_app_icon" />
 
         <LinearLayout
@@ -46,6 +56,7 @@
 
 
             <TextView
+                android:id="@+id/home_row_item_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -59,27 +70,17 @@
             android:padding="8dp">
 
             <CheckBox
+                android:id="@+id/home_row_item_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="?attr/borderlessButtonStyle"
-                android:layout_marginEnd="8dp"
-                android:text="Like"
-                android:textColor="@color/colorAccent"
-                android:textSize="14sp"
-                android:textAllCaps="false" />
+                android:button="@drawable/ic_favorite_24dp" />
 
-            <com.google.android.material.button.MaterialButton
+            <CheckBox
+                android:id="@+id/home_row_item_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="?attr/borderlessButtonStyle"
-                android:text="Comment"
-                android:textColor="@color/colorAccent"
-                android:textSize="14sp"
-                android:textAllCaps="false" />
+                android:button="@drawable/ic_chat_bubble_outline_black_24dp" />
+
         </LinearLayout>
 
     </LinearLayout>

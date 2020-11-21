@@ -37,7 +37,6 @@ public class SearchUserListAdapter extends RecyclerView.Adapter<SearchUserListAd
         this.userList = userList;
     }
 
-
     @NonNull
     @Override
     public SearchUserListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

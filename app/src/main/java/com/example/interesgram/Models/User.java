@@ -1,17 +1,28 @@
 package com.example.interesgram.Models;
 
+import java.util.List;
+
 public class User {
+    private String _id;
     private String username;
     private String email;
+    private String password;
     private String avatar;
+    private String intro;
     private int followingNum;
     private int followersNum;
-    private String intro;
-    private String[] followers;
-    private String[] following;
+    private String[] followers; // followers' id
+    private String[] following; // following' id
+    private List<Post> posts; // your posts
 
     public User(String username) {
         this.username = username;
+    }
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
     }
 
     public User(String username, String email, String avatar, int followingNum, int followersNum, String intro, String[] followers, String[] following) {
@@ -23,6 +34,22 @@ public class User {
             this.intro = intro;
             this.followers = followers;
             this.following = following;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     public String getUsername() {
